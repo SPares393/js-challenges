@@ -20,6 +20,9 @@ const lastName = "Smith";
 
 export const createFullName = () => {
   // Write your code here
+  const fullName = `${firstName} ${lastName}`;
+
+  return fullName;
 };
 
 /**
@@ -33,6 +36,11 @@ const largeNumber2 = 200;
 
 export const findLargestNumber = () => {
   // Write your code here
+  if (largeNumber1 > largeNumber2) {
+    return largeNumber1;
+  } else {
+    return largeNumber2;
+  }
 };
 
 /**
@@ -46,6 +54,9 @@ const addNumber2 = 24;
 
 export const addNumbers = () => {
   // Write your code here
+  const total = addNumber1 + addNumber2;
+
+  return total;
 };
 
 /* Intermediate Challenges */
