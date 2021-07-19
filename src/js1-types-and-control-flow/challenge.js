@@ -71,6 +71,9 @@ const password = "thisIsMyVeryLongPassword123456789";
 
 export const findLengthOfPassword = () => {
   // Write your code here
+  const passwordLength = password.length;
+
+  return passwordLength;
 };
 
 /**
@@ -87,6 +90,17 @@ const thing = "I am a thing";
 
 export const findType = () => {
   // Write your code here
+  const variableType = typeof thing;
+
+  if (variableType === "string") {
+    return "This is a string";
+  } else if (variableType === "number") {
+    return "This is a number";
+  } else if (variableType === "boolean") {
+    return "This is a boolean";
+  } else {
+    return "I don't know what this thing is";
+  }
 };
 
 /**
@@ -100,6 +114,14 @@ const nameTagOption = "Timothy";
 
 export const getIsValidOnNameTag = () => {
   // Write your code here
+  if (
+    nameTagOption[0] === nameTagOption[0].toUpperCase() &&
+    nameTagOption.length <= 8
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* Advanced Challenges */
@@ -114,6 +136,9 @@ const stringToConvert = "14.45";
 
 export const convertStringToNumber = () => {
   // Write your code here
+  const convertedString = Number(stringToConvert);
+
+  return convertedString;
 };
 
 /**
@@ -128,6 +153,10 @@ const stringWithUppercaseLetters = "I Am A String With Uppercase Letters";
 
 export const getHasUppercaseLetters = () => {
   // Write your code here
+  const regex = /([A-Z])/g;
+  const hasUpperCaseLetters = regex.test(stringWithUppercaseLetters);
+
+  return hasUpperCaseLetters;
 };
 
 /* Expert Challenge */
