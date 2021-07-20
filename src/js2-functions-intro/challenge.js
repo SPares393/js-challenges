@@ -129,6 +129,21 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  */
 export const getGrade = (score) => {
   /* Write your code here */
+  if (score < 0 || score > 100 || typeof score !== "number") {
+    return "Score unavailable";
+  } else if (score >= 80 && score <= 100) {
+    return "A";
+  } else if (score >= 70 && score <= 79) {
+    return "B";
+  } else if (score >= 60 && score <= 69) {
+    return "C";
+  } else if (score >= 50 && score <= 59) {
+    return "D";
+  } else if (score >= 40 && score <= 49) {
+    return "E";
+  } else {
+    return "F";
+  }
 };
 
 /**
@@ -139,6 +154,8 @@ export const getGrade = (score) => {
  */
 export const calculateAreaOfCirlce = (radius) => {
   /* Write your code here */
+  const area = Number((Math.PI * radius * radius).toFixed(2));
+  return area;
 };
 
 /* Expert Challenge */
