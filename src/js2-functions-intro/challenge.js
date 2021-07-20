@@ -177,4 +177,19 @@ export const calculateAreaOfCirlce = (radius) => {
  */
 export const getStudentSummary = (score, name) => {
   /* Write your code here */
+  if (score < 0 || score > 100 || typeof score !== "number") {
+    return `My apologies ${name}, there's been an error in processing your grade.`;
+  } else if (score >= 80 && score <= 100) {
+    return `Congratulations ${name}! You achieved a grade of A.`;
+  } else if (score >= 70 && score <= 79) {
+    return `Well done ${name}! You achieved a grade of B.`;
+  } else if (score >= 60 && score <= 69) {
+    return `Nicely done ${name}! You achieved a grade of C.`;
+  } else if (score >= 50 && score <= 59) {
+    return `That's okay ${name}. You achieved a grade of D.`;
+  } else if (score >= 40 && score <= 49) {
+    return `Too bad ${name}. You achieved a grade of E.`;
+  } else {
+    return `Sorry ${name}. You achieved a grade of F. There's always next year.`;
+  }
 };
