@@ -137,7 +137,16 @@ export const removeEvenNumbers = (numberArr) => {
  */
 
 export const generateAverage = (numberArr) => {
-  return;
+  let total = 0;
+  if (numberArr.length === 0) {
+    return 0;
+  } else {
+    for (let i = 0; i < numberArr.length; i++) {
+      total += numberArr[i];
+    }
+  }
+  const average = Number((total / numberArr.length).toFixed(0));
+  return average;
 };
 
 /**
@@ -148,7 +157,11 @@ export const generateAverage = (numberArr) => {
  */
 
 export const reverseOrder = (toReverseArr) => {
-  return;
+  let newArray = [];
+  for (let i = toReverseArr.length - 1; i >= 0; i--) {
+    newArray.push(toReverseArr[i]);
+  }
+  return newArray;
 };
 
 /**
