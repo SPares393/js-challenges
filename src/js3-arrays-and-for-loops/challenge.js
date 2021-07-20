@@ -183,7 +183,15 @@ export const reverseOrder = (toReverseArr) => {
  */
 
 export const generateHighscores = (playersArr, scoresArr) => {
-  return;
+  let newArray = [];
+  if (playersArr.length != scoresArr.length || playersArr.length == 0) {
+    return "invalid inputs";
+  } else {
+    for (let i = 0; i < playersArr.length; i++) {
+      newArray.push(`P:${i + 1} ${playersArr[i]} scored ${scoresArr[i]}`);
+    }
+  }
+  return newArray;
 };
 
 /**
