@@ -22,7 +22,20 @@
  */
 
 export const createRecipeString = (ingredientsArr) => {
-  return;
+  // Loop -> access to each item -> join with a +
+  // let recipeString = "";
+  // for (let i = 0; i < ingredientsArr.length; i++) {
+  //   // Check last item -> don't add +
+  //   if (i === ingredientsArr.length - 1) {
+  //     recipeString += ingredientsArr[i];
+  //   } else {
+  //     recipeString += ingredientsArr[i] + "+";
+  //   }
+  // }
+  // return recipeString;
+
+  const recipeString = ingredientsArr.join("+");
+  return recipeString;
 };
 
 /**
@@ -33,7 +46,7 @@ export const createRecipeString = (ingredientsArr) => {
  */
 
 export const getFirstAndLastItems = (itemsArr) => {
-  return;
+  return [itemsArr[0], itemsArr[itemsArr.length - 1]];
 };
 
 /**
@@ -44,7 +57,11 @@ export const getFirstAndLastItems = (itemsArr) => {
  */
 
 export const totalScores = (scoreArr) => {
-  return;
+  let totalScore = 0;
+  for (let i = 0; i < scoreArr.length; i++) {
+    totalScore += scoreArr[i];
+  }
+  return totalScore;
 };
 
 /**
