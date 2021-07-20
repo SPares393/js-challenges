@@ -18,6 +18,8 @@
  */
 export const createFullName = (firstName, lastName) => {
   /* Write your code here */
+  const fullName = `${firstName} ${lastName}`;
+  return fullName;
 };
 
 /**
@@ -28,8 +30,18 @@ export const createFullName = (firstName, lastName) => {
  * @param {number} number2 200
  * @returns {number} 100
  */
-export const findSmallestNumber = (/* Write the parameters here */) => {
+export const findSmallestNumber = (
+  /* Write the parameters here */ number1,
+  number2
+) => {
   /* Write your code here */
+  let smallestNumber;
+  if (number1 > number2) {
+    smallestNumber = number2;
+  } else {
+    smallestNumber = number1;
+  }
+  return smallestNumber;
 };
 
 /**
@@ -40,8 +52,13 @@ export const findSmallestNumber = (/* Write the parameters here */) => {
  * @param {number} number2 6
  * @returns {number} 18
  */
-export const multiplyNumbers = (/* Write the parameters here */) => {
+export const multiplyNumbers = (
+  /* Write the parameters here */ number1,
+  number2
+) => {
   /* Write your code here */
+  const total = number1 * number2;
+  return total;
 };
 
 /* Intermediate Challenges */
