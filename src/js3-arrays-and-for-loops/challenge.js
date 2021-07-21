@@ -221,5 +221,15 @@ export const generateHighscores = (playersArr, scoresArr) => {
 // };
 
 export const encryptString = (toEncrypt) => {
-  return;
+  const pivot = [[], [], []];
+  for (let i = 0; i < toEncrypt.length; i++) {
+    pivot[i % 3].push(toEncrypt.charAt(i));
+  }
+  let str = "";
+  for (let i = 0; i < pivot.length; i++) {
+    for (let j = 0; j < pivot[i].length; j++) {
+      str += pivot[i][j];
+    }
+  }
+  return str;
 };
