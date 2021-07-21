@@ -135,7 +135,7 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
  */
 
 export const formatStringArray = (stringArr) => {
-  const cleanedArr = stringArr.forEach((string) => {
+  const cleanedArr = stringArr.map((string) => {
     const cleanStr = string.trim().toLowerCase();
     return cleanStr;
   });
@@ -161,7 +161,13 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
-  return;
+  const cleanStr = string.replace(/[^\w]|[\s\d]/gi, "");
+  const formatStr = cleanStr
+    .split("")
+    .map((letter, index) =>
+      index % 2 === 0 ? letter.toUpperCase() : letter.toLowerCase()
+    );
+  return formatStr;
 };
 
 /**
@@ -188,5 +194,19 @@ export const formatString = (string) => {
  */
 
 export const fizzBuzz = (mixedArray) => {
-  return;
+  const filteredArr = mixedArray.filter((i) => i > 0 && Number(i));
+  const fizzBuzzArr = [];
+  filteredArr.forEach((i) => {
+    if (i % 3 === 0 && i % 5 === 0) {
+      fizzBuzzArr.push("FizzBuzz");
+    } else if (i % 3 === 0) {
+      fizzBuzzArr.push("Fizz");
+    } else if (i % 5 === 0) {
+      fizzBuzzArr.push("Buzz");
+    } else {
+      fizzBuzzArr.push(i.toString());
+    }
+  });
+
+  return fizzBuzzArr;
 };
