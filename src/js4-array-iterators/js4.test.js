@@ -118,7 +118,7 @@ describe("Testing createListOfPoessessions()", () => {
   });
 });
 
-xdescribe("Testing convertStringToNumbersArray()", () => {
+describe("Testing convertStringToNumbersArray()", () => {
   it("Should return an array", () => {
     expect(Array.isArray(convertStringToNumbersArray(numbersCSV))).toBe(true);
   });
@@ -154,7 +154,7 @@ xdescribe("Testing convertStringToNumbersArray()", () => {
   });
 });
 
-xdescribe("Testing createOddEvenArray()", () => {
+describe("Testing createOddEvenArray()", () => {
   it("Should return an array", () => {
     expect(Array.isArray(createOddEvenArray(numbersCSV))).toBe(true);
   });
@@ -196,7 +196,7 @@ xdescribe("Testing createOddEvenArray()", () => {
   });
 });
 
-xdescribe("Testing filterBooksBySearch()", () => {
+describe("Testing filterBooksBySearch()", () => {
   it("Should return an array", () => {
     expect(Array.isArray(filterBooksBySearch(["one thing"], "one thing"))).toBe(
       true
