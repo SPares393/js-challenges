@@ -159,7 +159,14 @@ export const checkPrimaryColours = (coloursArr) => {
  */
 
 export const checkStringPalindrome = (stringOne) => {
-  return;
+  const arr = stringOne.split("");
+  const reverseArr = arr.reverse();
+  const stringTwo = reverseArr.join("");
+  if (stringOne === stringTwo) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /**
@@ -173,7 +180,19 @@ export const checkStringPalindrome = (stringOne) => {
  */
 
 export const totalNestedScoresArr = (scoresArr) => {
-  return;
+  const score = scoresArr.map(totalScoresArr);
+
+  return score;
+
+  // let totalsArr = [];
+  // for (let i = 0; i < scoresArr.length; i++) {
+  //   totalsArr.push(
+  //     scoresArr[i].reduce((accumulator, current) => {
+  //       return accumulator + current;
+  //     }, 0)
+  //   );
+  //   return totalsArr;
+  // }
 };
 
 /**
