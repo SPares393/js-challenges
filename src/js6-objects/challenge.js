@@ -22,6 +22,7 @@
  */
 export const getFurniturePrice = (furniture) => {
   /* Write code here */
+  return furniture.price;
 };
 
 /**
@@ -33,6 +34,8 @@ export const getFurniturePrice = (furniture) => {
  */
 export const setFurnitureStoreLocation = (furniture, location) => {
   /* Write code here */
+  furniture.location = location;
+  return furniture;
 };
 
 /**
@@ -45,8 +48,20 @@ export const setFurnitureStoreLocation = (furniture, location) => {
  * @param {boolean} canTravelSolarSystems The ability for the space ship to travel to different solar systems
  * @returns {{name: string, noOfSeats: number, engineType: string, canTravelSolarSystems: boolean}} spaceship - The space ship object
  */
-export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems) => {
+export const makeSpaceship = (
+  name,
+  noOfSeats,
+  engineType,
+  canTravelSolarSystems
+) => {
   /* Write code here */
+  const spaceship = {
+    name: name,
+    noOfSeats: noOfSeats,
+    engineType: engineType,
+    canTravelSolarSystems: canTravelSolarSystems,
+  };
+  return spaceship;
 };
 
 /* Intermediate Challenges */
@@ -60,6 +75,10 @@ export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems
  */
 export const setUserName = (user, username) => {
   /* Write code here */
+  if (!user.username) {
+    user.username = username;
+  }
+  return user;
 };
 
 /**
@@ -71,6 +90,10 @@ export const setUserName = (user, username) => {
  */
 export const splitFullNameToFirstAndLast = (customer) => {
   /* Write code here */
+  const names = customer.fullName.split(" ");
+  customer.firstName = names[0];
+  customer.lastName = names[1];
+  return customer;
 };
 
 /**
@@ -84,6 +107,8 @@ export const splitFullNameToFirstAndLast = (customer) => {
  */
 export const accessGivenKey = (object, key) => {
   /* Write code here */
+  const value = object[key];
+  return value;
 };
 
 /* Advanced Challenges */
