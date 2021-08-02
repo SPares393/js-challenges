@@ -122,6 +122,11 @@ export const accessGivenKey = (object, key) => {
  */
 export const getUserAddress = (user) => {
   /* Write code here */
+  const address = `${user.address.line1} ${user.address.line2} ${user.address.city} ${user.address.postcode}`;
+  return address;
+
+  // check with coach why this didn't work:
+  // const address = user.address.toString(" ");
 };
 
 /**
@@ -134,6 +139,12 @@ export const getUserAddress = (user) => {
  */
 export const setSafeAllergens = (customer, allergenList) => {
   /* Write code here */
+  const safeAllergens = allergenList.filter((allergen) => {
+    return !customer.allergies.includes(allergen);
+  });
+
+  customer.safeAllergens = safeAllergens;
+  return customer;
 };
 
 /* Expert Challenge */
