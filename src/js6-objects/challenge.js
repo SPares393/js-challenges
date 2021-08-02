@@ -159,4 +159,7 @@ export const setSafeAllergens = (customer, allergenList) => {
  */
 export const mergeFurniture = (furnitureLocationData, furnitureProductData) => {
   /* Write code here */
+  let mergedObject = { ...furnitureLocationData, ...furnitureProductData };
+
+  return mergedObject;
 };
