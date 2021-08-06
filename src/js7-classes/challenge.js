@@ -352,6 +352,10 @@ export class BookShelf {
    */
 
   // WRITE LATEST BOOK GETTER HERE
+  get latestBook() {
+    const lastBook = this.booksOnShelf.length - 1;
+    return this.booksOnShelf[lastBook];
+  }
 
   /**
    * A setter that adds a new book to the list of books.
@@ -359,6 +363,9 @@ export class BookShelf {
    */
 
   // WRITE ADD BOOK TO SHELF SETTER HERE
+  set addBookToShelf(newBook) {
+    this._booksOnShelf.push(newBook);
+  }
 }
 
 /**
@@ -411,7 +418,11 @@ export class BankAccount {
    * @param {string} email
    * @param {number} balance
    */
-  constructor() {}
+  constructor(name, email, balance = 0) {
+    this.name = name;
+    this.email = email;
+    this._balance = balance;
+  }
 
   /**
    * A getter that returns the current balance.
@@ -419,6 +430,9 @@ export class BankAccount {
    */
 
   // WRITE BALANCE GETTER HERE
+  get balance() {
+    return this._balance;
+  }
 
   /**
    * A method that deposits to the balance.
@@ -430,6 +444,33 @@ export class BankAccount {
    */
 
   // WRITE DEPOSIT METHOD HERE
+  deposit(amount) {
+    if (typeof amount === "number") {
+      if (amount > 0) {
+        this._balance += amount;
+        return this._balance;
+      } else {
+        return "Invalid input, unable to deposit";
+      }
+    } else if (parseInt(amount)) {
+      if (amount > 0) {
+        this._balance += amount;
+        return this._balance;
+      } else {
+        return "Invalid input, unable to deposit";
+      }
+    } else {
+      return "Invalid input, unable to deposit";
+    }
+  }
+
+  // * This parameter can either be a number (2), a number as a string ("2"), or something else ("cheese")
+  // * You will have to handle this in the function.
+  // * You will need to handle negative numbers.
+  // *
+  // * If it is a positive number it needs to be added to the balance. The updated balance is then returned.
+  // * If it is a positive number as a string it needs to be turned into a number and added to the balance. The updated balance is then returned.
+  // * If it is a negative number or something else the function need to return this "Invalid input, unable to deposit".
 
   /**
    * A method that withdraws from the balance.

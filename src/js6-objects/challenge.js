@@ -124,9 +124,6 @@ export const getUserAddress = (user) => {
   /* Write code here */
   const address = `${user.address.line1} ${user.address.line2} ${user.address.city} ${user.address.postcode}`;
   return address;
-
-  // check with coach why this didn't work:
-  // const address = user.address.toString(" ");
 };
 
 /**
