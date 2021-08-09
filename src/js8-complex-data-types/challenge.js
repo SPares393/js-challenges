@@ -63,6 +63,11 @@ export const getNumberOfKeys = (object) => {
  */
 export const findMostExpensiveItem = (shoppingBasketArr) => {
   // Write code here
+  const sortedBasketArr = shoppingBasketArr.sort((a, b) => {
+    return b.price - a.price;
+  });
+  const mostExpensiveItem = sortedBasketArr[0];
+  return mostExpensiveItem;
 };
 
 /**
@@ -82,6 +87,13 @@ export const findMostExpensiveItem = (shoppingBasketArr) => {
  */
 export const settotalPrice = (shoppingBasketArr) => {
   // Write code here
+  const totalPriceArray = shoppingBasketArr.map((object) => {
+    const itemObject = { ...object }; // spread operator on each object
+    const totalPrice = itemObject.price * itemObject.quantity; // calculate totalPrice
+    itemObject.totalPrice = totalPrice; // add total price to each object in new array
+    return itemObject; // add object to array
+  });
+  return totalPriceArray; // return array
 };
 
 /**
@@ -92,6 +104,11 @@ export const settotalPrice = (shoppingBasketArr) => {
  */
 export const totalShoppingBasket = (shoppingBasketArr) => {
   // Write code here
+  let totalBasketCost = 0; // set initial cost to 0
+  for (let i = 0; i < shoppingBasketArr.length; i++) {
+    totalBasketCost += shoppingBasketArr[i].totalPrice; // loop each object and add cost to total
+  }
+  return totalBasketCost; // return total cost
 };
 
 /* Advanced Challenges */
