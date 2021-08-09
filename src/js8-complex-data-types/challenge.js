@@ -122,6 +122,16 @@ export const totalShoppingBasket = (shoppingBasketArr) => {
  */
 export const getImportantKeys = (mealsArr) => {
   // Write code here
+  const importantKeys = mealsArr.map((meal) => {
+    const newMeal = {
+      id: meal.id,
+      name: meal.name,
+      ingredients: meal.ingredients,
+      country: meal.country,
+    };
+    return newMeal;
+  });
+  return importantKeys;
 };
 
 /**
@@ -136,6 +146,17 @@ export const getImportantKeys = (mealsArr) => {
  */
 export const setImportantKeys = (mealsArr) => {
   // Write code here
+  const newMealsArr = mealsArr.map((meal) => {
+    const newMeal = { ...meal };
+    if (!newMeal.isVegetarian) {
+      newMeal.isVegetarian = false;
+    }
+    if (!newMeal.timeToCook) {
+      newMeal.timeToCook = 15;
+    }
+    return newMeal;
+  });
+  return newMealsArr;
 };
 
 /* Expert Challenge */

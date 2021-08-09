@@ -291,7 +291,7 @@ describe("getImportantKeys() tests", () => {
   });
 });
 
-xdescribe("setImportantKeys() tests", () => {
+describe("setImportantKeys() tests", () => {
   const mealsArr = [
     {
       id: 10,
