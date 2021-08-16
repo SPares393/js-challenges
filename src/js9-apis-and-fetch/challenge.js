@@ -17,8 +17,13 @@
  * @param {string} url - The url of the API to fetch from
  * @returns {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean}[]} The data from the API
  */
- export const getData = (url) => {
+export const getData = (url) => {
   // Your code here
+  return fetch(url)
+    .then((res) => res.json())
+    .then((json) => {
+      return json;
+    });
 };
 
 /**
@@ -29,6 +34,9 @@
  */
 export const getNames = (url) => {
   // Your code here
+  return fetch(url)
+    .then((res) => res.json())
+    .then((json) => json.map((item) => item.name));
 };
 
 /**
@@ -39,6 +47,9 @@ export const getNames = (url) => {
  */
 export const getEmployedPeople = (url) => {
   // Your code here
+  return fetch(url)
+    .then((res) => res.json())
+    .then((json) => json.filter((item) => item.isEmployed));
 };
 
 /* Intermediate Challenges */
