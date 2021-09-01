@@ -130,6 +130,25 @@ export const getPeopleWithMatchingInterests = (url, interest) => {
  */
 export const setDescriptions = (url) => {
   // Your code here
+  return fetch(url)
+    .then((res) => res.json())
+    .then((people) => {
+      const peopleWithDescriptions = people.map((person) => {
+        const newPerson = { ...person };
+        const interests = `${newPerson.interests[0]}, ${newPerson.interests[1]} and ${newPerson.interests[2]}`;
+        const description = `My name is ${newPerson.name}, I am ${
+          newPerson.age
+        } years old and ${newPerson.height}cm tall. I enjoy ${interests}. ${
+          newPerson.isEmployed
+            ? "I am currently employed"
+            : "I am not currently employed"
+        }`;
+
+        newPerson.description = description;
+        return newPerson;
+      });
+      return peopleWithDescriptions;
+    });
 };
 
 /* Expert Challenges */
