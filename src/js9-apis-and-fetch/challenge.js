@@ -64,6 +64,12 @@ export const getEmployedPeople = (url) => {
  */
 export const findPersonWithId = (url, id) => {
   // Your code here
+  return fetch(url)
+    .then((res) => res.json())
+    .then((json) => {
+      const foundPerson = json.find((person) => person.id === id);
+      return foundPerson ? foundPerson : "Person not found";
+    });
 };
 
 /**
@@ -76,6 +82,16 @@ export const findPersonWithId = (url, id) => {
  */
 export const getPeopleWithMatchingInterests = (url, interest) => {
   // Your code here
+  return fetch(url)
+    .then((res) => res.json())
+    .then((people) => {
+      const peopleWithInterest = people.filter((person) =>
+        person.interests.includes(interest)
+      );
+      return peopleWithInterest.length
+        ? peopleWithInterest
+        : "No people with interest found";
+    });
 };
 
 /* Advanced Challenges */

@@ -96,7 +96,7 @@ describe("getEmployedPeople() tests", () => {
   });
 });
 
-xdescribe("findPersonWithId() tests", () => {
+describe("findPersonWithId() tests", () => {
   const dummyId001 = {
     id: "001",
     name: "Peter",
@@ -140,7 +140,7 @@ xdescribe("findPersonWithId() tests", () => {
   });
 });
 
-xdescribe("getPeopleWithMatchingInterests() tests", () => {
+describe("getPeopleWithMatchingInterests() tests", () => {
   const dummySwimming = [
     {
       id: "001",
